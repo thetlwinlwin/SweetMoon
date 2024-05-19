@@ -2,39 +2,20 @@ user_name = input("Enter username : ")
 
 textfile = open("users(asc).txt")
 
-# lines = textfile.readlines()
+end_of_file = False
+latest_login = None
 
-# # user_index = 0
-# # user_found = False
-
-# # for i in range(len(lines)):
-# #     user = lines[i].strip()
-# #     if user == user_name:
-# #         user_index = i
-# #         user_found = True
-
-# # latest_login = lines[user_index + 1]
-# # print(f"latest login at {latest_login}")
-
-# # if not user_found:
-# #     print("User not Found")
-
-
-user_found = False
-
-while not user_found:
-    user_logins = []
+while not end_of_file:
     user = textfile.readline().strip()
     if user == "":
-        break
+        end_of_file = True
     if user == user_name:
         login_date = textfile.readline().strip()
-        user_logins.append(login_date)
+        latest_login = login_date
 
-if user_found:
-    print(f"latest login is {user_logins[-1]}")
+if latest_login:
+    print(f"latest login is {latest_login}")
 else:
-    print("User not Found")
-
+    print("User not found")
 
 textfile.close()
