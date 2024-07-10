@@ -1,5 +1,3 @@
-print("Hello WElCOMe from car paradise\n")
-
 CAR_PRICE = 0
 CAR_DISCOUNT_PERCENT = 0
 TRADE_IN_VALUE = 0
@@ -52,7 +50,7 @@ is_trade_in = input("Do you want to trade in your car y/n : ").lower()
 if is_trade_in == "y":
     CAR_DISCOUNT_PERCENT += 0.05
     EXTRA_DISCOUNT_PRECENT += 0.05
-    offer_amount = int(input("We the offer : "))
+    offer_amount = int(input("We offer : "))
     TRADE_IN_VALUE = offer_amount
 
 AFTER_CAR_PRICE = CAR_PRICE - (CAR_PRICE * CAR_DISCOUNT_PERCENT) - TRADE_IN_VALUE
